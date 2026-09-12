@@ -43,7 +43,10 @@ function ReelCard({ reel }: { reel: (typeof reels)[0] }) {
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
-                <IconPlay size={20} className="text-[var(--color-primary)] ml-1" />
+                <IconPlay
+                  size={20}
+                  className="text-[var(--color-primary)] ml-1"
+                />
               </div>
             </div>
           </button>

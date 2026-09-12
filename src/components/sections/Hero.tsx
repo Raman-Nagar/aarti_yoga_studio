@@ -9,7 +9,6 @@ const trustBadges = [
 ];
 
 const HERO_IMAGE = "/images/arti-hero.jpeg";
-const HAS_REAL_IMAGE = true;
 
 export function Hero() {
   return (
@@ -34,14 +33,14 @@ export function Hero() {
         className="absolute top-0 right-0 w-[500px] h-[700px] pointer-events-none"
         aria-hidden="true"
         style={{
-          background: "radial-gradient(ellipse at top right, var(--color-accent) 0%, transparent 65%)",
+          background:
+            "radial-gradient(ellipse at top right, var(--color-accent) 0%, transparent 65%)",
           opacity: 0.07,
         }}
       />
 
       <div className="ys-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-12 lg:py-20">
-
           {/* Text content */}
           <div className="order-1">
             <p className="section-label mb-5">Yoga with Arti</p>
@@ -98,47 +97,19 @@ export function Hero() {
 
               {/* Image frame */}
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[var(--color-surface-2)]">
-                {HAS_REAL_IMAGE ? (
-                  <Image
-                    src={HERO_IMAGE}
-                    alt="Arti — professional yoga teacher"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 360px, 400px"
-                  />
-                ) : (
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background: `linear-gradient(
-                        160deg,
-                        var(--color-surface-2) 0%,
-                        var(--color-surface) 40%,
-                        color-mix(in srgb, var(--color-accent) 18%, var(--color-surface)) 100%
-                      )`,
-                    }}
-                    aria-hidden="true"
-                  >
-                    <svg
-                      className="absolute inset-0 w-full h-full opacity-[0.06]"
-                      viewBox="0 0 400 533"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <circle cx="200" cy="200" r="160" stroke="var(--color-primary)" strokeWidth="1" />
-                      <circle cx="200" cy="200" r="120" stroke="var(--color-primary)" strokeWidth="0.5" />
-                      <circle cx="200" cy="200" r="80" stroke="var(--color-primary)" strokeWidth="0.5" />
-                      <line x1="40" y1="200" x2="360" y2="200" stroke="var(--color-primary)" strokeWidth="0.5" />
-                      <line x1="200" y1="40" x2="200" y2="360" stroke="var(--color-primary)" strokeWidth="0.5" />
-                    </svg>
-                  </div>
-                )}
+                <Image
+                  src={HERO_IMAGE}
+                  alt="Arti — professional yoga teacher"
+                  fill
+                  priority
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 360px, 400px"
+                />
               </div>
 
-              {/* Floating experience card — inside padding so it stays visible */}
+              {/* Floating experience card */}
               <div
-                className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 bg-white rounded-xl px-4 py-3 shadow-md border border-[var(--color-border)]"
+                className="absolute bottom-4 -left-3 lg:-left-5 bg-white rounded-xl px-4 py-3 shadow-md border border-[var(--color-border)]"
                 style={{ zIndex: 10 }}
               >
                 <p className="font-display text-xl font-semibold text-[var(--color-primary)] leading-none">
@@ -151,7 +122,7 @@ export function Hero() {
 
               {/* Floating sessions card */}
               <div
-                className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 bg-[var(--color-primary)] rounded-xl px-4 py-3 shadow-md"
+                className="absolute top-4 -right-3 lg:-right-5 bg-[var(--color-primary)] rounded-xl px-4 py-3 shadow-md"
                 style={{ zIndex: 10 }}
               >
                 <p className="text-[11px] font-medium text-white/70 mb-0.5">

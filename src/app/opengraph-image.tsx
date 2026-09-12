@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/config/site";
 
 export const runtime = "nodejs";
 export const alt = "Arti Yoga Studio — Yoga Classes & Personal Sessions";
@@ -112,7 +113,7 @@ export default function OGImage() {
             letterSpacing: "0.05em",
           }}
         >
-          artiyogastudio.com
+          {siteConfig.url.replace("https://", "")}
         </div>
 
         {/* Right accent bar */}

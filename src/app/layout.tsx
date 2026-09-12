@@ -18,39 +18,59 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Arti Yoga Studio | Yoga Classes & Personal Sessions",
-    template: "%s | Arti Yoga Studio",
+    default: "Arti Yoga Studio | Yoga Classes in Indore | Personal Home Sessions",
+    template: "%s | Arti Yoga Studio Indore",
   },
   description:
-    "Practice yoga with Arti — experienced yoga teacher in Indore with 4+ years of teaching. Offering group yoga classes and personalized home-visit sessions. Beginner friendly. Flexible scheduling.",
+    "Arti Yoga Studio — expert yoga teacher in Indore with 4+ years experience. Offering beginner-friendly group yoga classes and personalized one-on-one home-visit sessions. Book your session today.",
   keywords: [
-    "yoga classes Indore",
-    "yoga teacher Indore",
+    "yoga classes in Indore",
+    "yoga teacher in Indore",
+    "yoga instructor Indore",
     "personal yoga trainer Indore",
     "home yoga sessions Indore",
     "group yoga classes Indore",
-    "yoga instructor Indore",
+    "beginner yoga Indore",
+    "yoga for beginners Indore",
+    "yoga at home Indore",
+    "one on one yoga Indore",
+    "yoga for stress relief",
+    "yoga for flexibility",
+    "Arti yoga studio",
     "yoga with Arti",
-    "Arti Yoga Studio",
-    "beginner yoga",
-    "online yoga classes",
+    "Arti Nagar yoga",
+    "online yoga classes India",
   ],
-  authors: [{ name: "Arti Yoga Studio" }],
-  creator: "Arti Yoga Studio",
+  authors: [{ name: "Arti Nagar", url: siteConfig.url }],
+  creator: "Arti Nagar",
+  publisher: "Arti Yoga Studio",
+  category: "Health & Fitness",
+  alternates: {
+    canonical: siteConfig.url,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Arti Yoga Studio | Yoga Classes & Personal Sessions",
+    title: "Arti Yoga Studio | Yoga Classes in Indore",
     description:
-      "Practice yoga with Arti — experienced yoga teacher offering group classes and personalized home-visit sessions. Beginner friendly.",
+      "Expert yoga teacher in Indore offering group classes & personalized home-visit sessions. Beginner friendly. Book via WhatsApp.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Arti Yoga Studio — Yoga Classes in Indore",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arti Yoga Studio | Yoga Classes & Personal Sessions",
+    title: "Arti Yoga Studio | Yoga Classes in Indore",
     description:
-      "Practice yoga with Arti — experienced yoga teacher offering group classes and personalized home-visit sessions.",
+      "Expert yoga teacher in Indore — group classes & personalized home-visit sessions. Beginner friendly.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -62,6 +82,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    // google: "your-google-search-console-verification-code",
   },
 };
 

@@ -116,7 +116,6 @@ h4 {
 }
 
 p {
-  /* color: var(--color-text-2); */
   line-height: 1.7;
 }
 
@@ -134,6 +133,8 @@ button {
   cursor: pointer;
   font-family: var(--font-body);
   border: none;
+  background: none;
+  color: inherit;
 }
 
 input,

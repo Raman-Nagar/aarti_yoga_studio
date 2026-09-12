@@ -59,7 +59,6 @@ const inputClass = (hasError?: boolean) =>
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [serverError, setServerError] = useState<string | null>(null);
 
   const {
     register,
@@ -74,25 +73,43 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = async (data: BookingSchema) => {
+  const onSubmit = (data: BookingSchema) => {
     setSubmitting(true);
-    setServerError(null);
-    try {
-      const res = await fetch("/api/booking", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("Submission failed");
-      setSubmitted(true);
-      reset();
-    } catch {
-      setServerError(
-        "Something went wrong. Please try again or reach out via WhatsApp.",
-      );
-    } finally {
-      setSubmitting(false);
-    }
+
+    const sessionLabels: Record<string, string> = {
+      group: "Group Yoga Class",
+      personal: "Personal Home Visit",
+      other: "Other / Not Sure",
+    };
+    const levelLabels: Record<string, string> = {
+      beginner: "Complete Beginner",
+      some: "Some Experience",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+    };
+
+    const lines = [
+      "🙏 *New Session Request*",
+      "",
+      `*Name:* ${data.name}`,
+      `*Phone:* ${data.phone}`,
+      `*Email:* ${data.email}`,
+      `*Session:* ${sessionLabels[data.sessionType] ?? data.sessionType}`,
+      `*Level:* ${levelLabels[data.experienceLevel] ?? data.experienceLevel}`,
+      ...(data.preferredDate ? [`*Date:* ${data.preferredDate}`] : []),
+      ...(data.preferredTime ? [`*Time:* ${data.preferredTime}`] : []),
+      ...(data.message ? ["", `*Message:* ${data.message}`] : []),
+    ];
+
+    const url = buildWhatsAppUrl(
+      siteConfig.contact.whatsapp,
+      lines.join("\n"),
+    );
+
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSubmitted(true);
+    reset();
+    setSubmitting(false);
   };
 
   const whatsappUrl = buildWhatsAppUrl(siteConfig.contact.whatsapp);
@@ -451,16 +468,7 @@ export function ContactForm() {
                   />
                 </Field>
 
-                {serverError && (
-                  <p
-                    className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3"
-                    role="alert"
-                  >
-                    {serverError}
-                  </p>
-                )}
-
-                <Button
+<Button
                   type="submit"
                   variant="primary"
                   size="lg"

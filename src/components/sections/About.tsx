@@ -19,20 +19,20 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
           <div className="relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--color-surface-2)]">
+            <div className="reveal relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--color-surface-2)]">
               <Image
                 src="/images/arti-about.jpeg"
                 alt="Arti — yoga teacher"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
-            {/* Accent block — outside overflow container so it's visible on mobile */}
+            {/* Accent block */}
             <div
-              className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-40 h-40 lg:w-48 lg:h-48 rounded-2xl -z-10 opacity-20"
-              style={{ background: "var(--color-accent)" }}
+              className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-40 h-40 lg:w-48 lg:h-48 rounded-2xl opacity-20"
+              style={{ background: "var(--color-accent)", zIndex: -1 }}
               aria-hidden="true"
             />
           </div>
