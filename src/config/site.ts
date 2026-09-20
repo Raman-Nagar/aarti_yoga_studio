@@ -5,7 +5,7 @@ export const siteConfig = {
   subTagline:
     "Personalized yoga guidance and offline group classes designed to help you move better, breathe deeper and feel more balanced.",
   experience: "4+",
-  url: "https://artiyogastudio.com",
+  url: "https://artiyog.ramannagar.in",
 
   contact: {
     phone: "+91 92438 63365",
