@@ -21,9 +21,12 @@ export function About() {
           <div className="relative">
             <div className="reveal relative aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--color-surface-2)]">
               <Image
-                src="/images/arti-about.jpeg"
+                src="/images/arti-about.webp"
                 alt="Arti — yoga teacher"
                 fill
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAoABUB8JYgCdH8AE1qvAAD+sPyjvHE4Qxr7sf7wQShNj6Co/YZdh2+V3euk4UgAAA=="
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

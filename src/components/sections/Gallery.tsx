@@ -2,6 +2,14 @@ import Image from "next/image";
 import { galleryImages } from "@/data/gallery";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
+const blurDataURLs: Record<string, string> = {
+  "/images/gallery-1.webp": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACQAQCdASoKAAoABUB8JZACdADzAgAA/pQ/8GdyIX9p78V0MLNJxr3CeZrI14XWG4AAAA==",
+  "/images/gallery-2.webp": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoKAAoABUB8JbACdH8AFbswYAD+3ufJOzDucGTMO7BGFaUu1AZTp0mKSkCT6krYAAA=",
+  "/images/gallery-3.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoKAAoABUB8JbACdADzgszMKgAA/rAJ0PxHupky98uUqFiNkdVBZ34prKG3jpNYo5vF0+rNNchAAA==",
+  "/images/gallery-4.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAoABUB8JQBOgBt1ZBbiwADv61yMxBirYIr7S+EQ6S70tfDuR7FARLAai7l7ELwAAA==",
+  "/images/gallery-5.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoKAAoABUB8JQBOgCBUf8bUdAAA4AUhFL3tzJfNsOEWyPA3ttA+KY/LBmG80tMOErRMAAAA",
+  "/images/gallery-6.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAQCdASoKAAoABUB8JZQAAlAzjAAA/iPuILDB+hNiZUsKF+jvKaz+yNxBvqvSASffIfTvODQAAA==",
+};
 const realImages = galleryImages.filter(
   (img) => !img.src.includes("/placeholder/")
 );
@@ -47,6 +55,9 @@ export function Gallery() {
           alt={image.alt}
           width={image.width}
           height={image.height}
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL={blurDataURLs[image.src] ?? "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAQCdASoKAAoABUB8JZQAAlAzjAAA/iPuILDB+hNiZUsKF+jvKaz+yNxBvqvSASffIfTvODQAAA=="}
           className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-500"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />

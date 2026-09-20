@@ -8,7 +8,7 @@ const trustBadges = [
   { value: "1:1", label: "Home Visits" },
 ];
 
-const HERO_IMAGE = "/images/arti-hero.jpeg";
+const HERO_IMAGE = "/images/arti-hero.webp";
 
 export function Hero() {
   return (
@@ -102,6 +102,8 @@ export function Hero() {
                   alt="Arti — professional yoga teacher"
                   fill
                   priority
+                  placeholder="blur"
+                  blurDataURL="data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoKAAoABUB8JYgCdADbAOKAAPlhbnltMK9yfAzO8TSXiGG9iqzdrVNbKIJJ9kyvH8gAAA=="
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 360px, 400px"
                 />

@@ -3,7 +3,7 @@ import type { GalleryImage } from "@/types";
 export const galleryImages: GalleryImage[] = [
   {
     id: "g1",
-    src: "/images/gallery-1.jpeg",
+    src: "/images/gallery-1.webp",
     alt: "Arti demonstrating a yoga pose",
     category: "teaching",
     width: 960,
@@ -11,7 +11,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g2",
-    src: "/images/gallery-2.jpeg",
+    src: "/images/gallery-2.webp",
     alt: "Arti yoga session",
     category: "teaching",
     width: 1280,
@@ -19,7 +19,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g3",
-    src: "/images/gallery-3.jpeg",
+    src: "/images/gallery-3.webp",
     alt: "Personal yoga session",
     category: "personal",
     width: 960,
@@ -27,7 +27,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g4",
-    src: "/images/gallery-4.jpeg",
+    src: "/images/gallery-4.webp",
     alt: "Yoga practice with Arti",
     category: "teaching",
     width: 853,
@@ -35,7 +35,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g5",
-    src: "/images/gallery-5.jpeg",
+    src: "/images/gallery-5.webp",
     alt: "Group yoga class",
     category: "group",
     width: 853,
@@ -43,7 +43,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g6",
-    src: "/images/gallery-6.jpeg",
+    src: "/images/gallery-6.webp",
     alt: "Yoga session at Arti Yoga Studio",
     category: "group",
     width: 853,
