@@ -18,6 +18,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/data/faqs";
+import { services } from "@/data/services";
+import { testimonials } from "@/data/testimonials";
+import { videos } from "@/data/videos";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -82,6 +85,102 @@ const personSchema = {
   knowsAbout: ["Yoga", "Pranayama", "Flexibility Training", "Stress Relief", "Beginner Yoga"],
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Yoga Services by Arti Yoga Studio",
+  itemListElement: services
+    .filter((s) => s.available)
+    .map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Service",
+        name: s.title,
+        description: s.description,
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Arti Yoga Studio",
+          url: siteConfig.url,
+        },
+        areaServed: {
+          "@type": "City",
+          name: "Indore",
+        },
+        url: `${siteConfig.url}/#services`,
+      },
+    })),
+};
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Arti Yoga Studio",
+  url: siteConfig.url,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    reviewCount: testimonials.length.toString(),
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: testimonials.map((t) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: t.name,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+    },
+    reviewBody: t.text,
+    datePublished: "2026-09-01",
+  })),
+};
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Yoga Videos by Arti Nagar",
+  itemListElement: videos
+    .filter((v) => v.youtubeId)
+    .map((v, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "VideoObject",
+        name: v.title,
+        description: v.description,
+        thumbnailUrl: `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg`,
+        uploadDate: "2026-01-01",
+        embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
+        url: `https://www.youtube.com/watch?v=${v.youtubeId}`,
+        publisher: {
+          "@type": "Person",
+          name: "Arti Nagar",
+          url: siteConfig.url,
+        },
+      },
+    })),
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Arti Yoga Studio",
+  url: siteConfig.url,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteConfig.url}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -105,6 +204,22 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
       <script
         type="application/ld+json"
