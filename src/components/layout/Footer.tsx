@@ -170,9 +170,15 @@ export function Footer() {
           <p className="text-xs text-white/30">
             © {year} Arti Yoga Studio. All rights reserved.
           </p>
-          <p className="text-xs text-white/20">
-            Yoga with Arti — Group Classes & Personal Sessions
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy-policy" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-white/20 text-xs">·</span>
+            <Link href="/terms" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
