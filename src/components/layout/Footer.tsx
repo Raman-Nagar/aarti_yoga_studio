@@ -12,6 +12,7 @@ const footerLinks = [
   { label: "About Arti", href: "#about" },
   { label: "Group Classes", href: "#services" },
   { label: "Personal Sessions", href: "#services" },
+  { label: "Blog", href: "/blog" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
