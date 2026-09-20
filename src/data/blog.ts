@@ -6,7 +6,7 @@ export const blogPosts: BlogPost[] = [
     title: "Yoga for Beginners: A Complete Guide to Starting Your Practice",
     description:
       "New to yoga? This complete beginner's guide covers everything you need to know — what yoga is, how to start, what to expect in your first class, and tips to build a consistent practice.",
-    date: "2026-09-01",
+    date: "2025-01-10",
     readTime: "8 min read",
     category: "Beginners",
     keywords: [
@@ -84,7 +84,7 @@ Reach out via WhatsApp or the booking form to get started. Your first step is si
     title: "Yoga vs Gymnastics: Flexibility, Stunts and What You Need to Know",
     description:
       "Curious about the difference between yoga and gymnastics? Learn how yoga improves flexibility for stunts, what poses overlap, and how yoga can support gymnasts and stunt performers.",
-    date: "2026-09-05",
+    date: "2025-01-15",
     readTime: "7 min read",
     category: "Flexibility",
     keywords: [
@@ -170,7 +170,7 @@ Arti's personal home-visit sessions can be tailored specifically to your flexibi
     title: "10-Minute Morning Yoga Routine for Beginners (Start Your Day Right)",
     description:
       "A simple 10-minute morning yoga routine for beginners. These 6 poses will wake up your body, improve flexibility and set a positive tone for the rest of your day.",
-    date: "2026-09-10",
+    date: "2025-01-20",
     readTime: "5 min read",
     category: "Routines",
     keywords: [
@@ -232,7 +232,7 @@ If you want personalised guidance on building a morning practice that fits your 
     title: "Yoga for Stress and Anxiety: How It Works and 5 Poses That Help",
     description:
       "Struggling with stress or anxiety? Learn how yoga calms the nervous system, reduces cortisol and brings mental clarity. Includes 5 specific poses for immediate stress relief.",
-    date: "2026-09-15",
+    date: "2025-01-25",
     readTime: "6 min read",
     category: "Wellness",
     keywords: [
@@ -300,7 +300,7 @@ If you are dealing with significant stress or anxiety and would like personalise
     title: "Surya Namaskar (Sun Salutation): Complete Step-by-Step Guide",
     description:
       "Learn Surya Namaskar (Sun Salutation) step by step. This complete guide covers all 12 poses, breathing instructions, benefits and tips for beginners.",
-    date: "2026-09-20",
+    date: "2025-02-01",
     readTime: "7 min read",
     category: "Poses",
     keywords: [

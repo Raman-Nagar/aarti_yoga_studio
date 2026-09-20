@@ -136,7 +136,7 @@ const reviewSchema = {
       bestRating: "5",
     },
     reviewBody: t.text,
-    datePublished: "2026-09-01",
+    datePublished: "2025-01-01",
   })),
 };
 
@@ -154,7 +154,7 @@ const videoSchema = {
         name: v.title,
         description: v.description,
         thumbnailUrl: `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg`,
-        uploadDate: "2026-01-01",
+        uploadDate: "2024-01-01",
         embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
         url: `https://www.youtube.com/watch?v=${v.youtubeId}`,
         publisher: {
@@ -171,14 +171,6 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "Arti Yoga Studio",
   url: siteConfig.url,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${siteConfig.url}/?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
 };
 
 const faqSchema = {
